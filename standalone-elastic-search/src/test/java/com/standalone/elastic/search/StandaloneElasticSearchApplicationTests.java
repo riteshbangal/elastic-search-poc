@@ -1,4 +1,4 @@
-package com.standalone.elastic.search.standaloneelasticsearch;
+package com.standalone.elastic.search;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
