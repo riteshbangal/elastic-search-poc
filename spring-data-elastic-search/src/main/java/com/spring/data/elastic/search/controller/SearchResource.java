@@ -3,6 +3,7 @@ package com.spring.data.elastic.search.controller;
 import com.spring.data.elastic.search.repository.UserElasticsearchRepository;
 import com.spring.data.elastic.search.repository.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,9 @@ public class SearchResource {
 
     @Autowired
     UserElasticsearchRepository userElasticsearchRepository;
+
+    @Autowired
+    ElasticsearchTemplate template;
 
     @GetMapping(value = "/name/{text}")
     public List<User> searchName(@PathVariable final String text) {
@@ -36,5 +40,10 @@ public class SearchResource {
         Iterable<User> users = userElasticsearchRepository.findAll();
         users.forEach(userList::add);
         return userList;
+    }
+
+    @GetMapping(value = "/index/delete")
+    public boolean delete() {
+        return template.deleteIndex(User.class);
     }
 }
