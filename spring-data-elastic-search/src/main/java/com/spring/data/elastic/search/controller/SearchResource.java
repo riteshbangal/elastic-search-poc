@@ -1,6 +1,6 @@
 package com.spring.data.elastic.search.controller;
 
-import com.spring.data.elastic.search.repository.UserRepository;
+import com.spring.data.elastic.search.repository.UserElasticsearchRepository;
 import com.spring.data.elastic.search.repository.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,28 +12,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/rest/search")
+@RequestMapping("/search")
 public class SearchResource {
 
     @Autowired
-    UserRepository userRepository;
+    UserElasticsearchRepository userElasticsearchRepository;
 
     @GetMapping(value = "/name/{text}")
     public List<User> searchName(@PathVariable final String text) {
-        return userRepository.findByName(text);
+        return userElasticsearchRepository.findByName(text);
     }
 
 
     @GetMapping(value = "/salary/{salary}")
     public List<User> searchSalary(@PathVariable final Long salary) {
-        return userRepository.findBySalary(salary);
+        return userElasticsearchRepository.findBySalary(salary);
     }
 
 
     @GetMapping(value = "/all")
     public List<User> searchAll() {
         List<User> userList = new ArrayList<>();
-        Iterable<User> users = userRepository.findAll();
+        Iterable<User> users = userElasticsearchRepository.findAll();
         users.forEach(userList::add);
         return userList;
     }
