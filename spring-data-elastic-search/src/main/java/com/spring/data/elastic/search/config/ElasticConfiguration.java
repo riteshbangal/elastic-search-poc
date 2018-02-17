@@ -12,9 +12,8 @@ import java.io.File;
 import java.io.IOException;
 
 @Configuration
-@EnableElasticsearchRepositories(basePackages = "com.techprimers.elastic.repository")
+@EnableElasticsearchRepositories(basePackages = "com.spring.data.elastic.search.repository")
 public class ElasticConfiguration {
-
 
     @Bean
     public NodeBuilder nodeBuilder() {
@@ -33,8 +32,6 @@ public class ElasticConfiguration {
                         .put("path.logs", new File(tmpDir, "logs").getAbsolutePath()) // 2
                         .put("path.work", new File(tmpDir, "work").getAbsolutePath()) // 2
                         .put("path.home", tmpDir); // 3
-
-
 
         return new ElasticsearchTemplate(nodeBuilder()
                 .local(true)

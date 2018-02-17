@@ -1,5 +1,6 @@
 # Ignored folders or files #
 target/
+nodes/
 
 pom.xml.tag
 pom.xml.releaseBackup
