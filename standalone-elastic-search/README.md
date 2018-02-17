@@ -3,14 +3,14 @@
 
 ## Elastic-search Endpoints
 - http://localhost:9200
-- http://127.0.0.1:9300
+- http://127.0.0.1:9300 - Socket Address; This is not a HTTP port
 - http://localhost:9200/employee/id/1
 
 ## REST Endpoints
 - http://localhost:8080/users/insert/1
-- http://localhost:8080/users/view/3
-- http://localhost:8080/users/update/3
-- http://localhost:8080/users/delete/3
+- http://localhost:8080/users/view/1
+- http://localhost:8080/users/update/1
+- http://localhost:8080/users/delete/1
 
 ## Links
 - [Elasticsearch Installation Steps](https://www.elastic.co/downloads/elasticsearch)
