@@ -54,8 +54,6 @@ public class UsersResource {
     public Map<String, Object> view(@PathVariable final String id) {
         GetResponse getResponse = client.prepareGet("employee", "id", id).get();
         System.out.println(getResponse.getSource());
-
-
         return getResponse.getSource();
     }
 
