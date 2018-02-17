@@ -1,4 +1,4 @@
-package com.spring.data.elastic.search.springdataelasticsearch;
+package com.spring.data.elastic.search;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

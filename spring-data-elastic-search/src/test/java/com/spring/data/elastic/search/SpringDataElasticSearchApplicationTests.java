@@ -1,4 +1,4 @@
-package com.spring.data.elastic.search.springdataelasticsearch;
+package com.spring.data.elastic.search;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
