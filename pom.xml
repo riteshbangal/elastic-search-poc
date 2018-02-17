@@ -14,6 +14,7 @@
     <!-- Includes following modules for build api on elastic search -->
     <modules>
         <module>spring-data-elastic-search</module>
+        <module>standalone-elastic-search</module>
     </modules>
 
     <properties>
